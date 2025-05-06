@@ -5,17 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class UserNotFoundTest {
+public class UserNotFoundTest extends TestBase{
 
-    @BeforeAll
-    static void ignoreCheckSSL() {
-        RestAssured.config = RestAssured.config()
-                .sslConfig(SSLConfig.sslConfig().relaxedHTTPSValidation()); // Игнорирует SSL-ошибки
-        given()
-                .get("https://reqres.in/api/users/23")
-                .then()
-                .statusCode(401);
-    }
 
     @Test
     void checkStatusTest() {

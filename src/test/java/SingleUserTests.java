@@ -6,17 +6,8 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class SingleUserTests {
+public class SingleUserTests extends TestBase{
 
-    @BeforeAll
-    static void ignoreCheckSSL() {
-        RestAssured.config = RestAssured.config()
-                .sslConfig(SSLConfig.sslConfig().relaxedHTTPSValidation()); // Игнорирует SSL-ошибки
-        given()
-                .get("https://reqres.in/api/users/2")
-                .then()
-                .statusCode(200);
-    }
 
     @Test
     void checkIdUserWithLogsTest() {
