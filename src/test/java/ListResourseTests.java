@@ -11,7 +11,7 @@ public class ListResourseTests extends TestBase {
     void checkListWithStatusTest() {
         given()
                 .log().uri()
-                .get("https://reqres.in/api/unknown")
+                .get("/unknown")
                 .then()
                 .log().status()
                 .log().body()
@@ -22,7 +22,7 @@ public class ListResourseTests extends TestBase {
     void checkTotalWithLogsTest() {
         given()
                 .log().all()
-                .get("https://reqres.in/api/unknown")
+                .get("/unknown")
                 .then()
                 .log().all()
                 .body("total", is(12));
