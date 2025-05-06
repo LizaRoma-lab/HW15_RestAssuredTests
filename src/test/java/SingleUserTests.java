@@ -11,7 +11,7 @@ public class SingleUserTests extends TestBase{
     void checkIdUserWithLogsTest() {
         given()
                 .log().all()
-                .get("https://reqres.in/api/users/2")
+                .get("/users/2")
                 .then()
                 .log().all()
                 .body("data.id", is(2));
@@ -21,7 +21,7 @@ public class SingleUserTests extends TestBase{
     void checkIdUserWithSomeLogsTest() {
         given()
                 .log().all()
-                .get("https://reqres.in/api/users/2")
+                .get("/users/2")
                 .then()
                 .log().body()
                 .body("data.id", is(2));
@@ -31,7 +31,7 @@ public class SingleUserTests extends TestBase{
     void checkIdUserWithStatusTest() {
         given()
                 .log().uri()
-                .get("https://reqres.in/api/users/2")
+                .get("/users/2")
                 .then()
                 .log().status()
                 .log().body()
